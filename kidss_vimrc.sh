@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+!/usr/bin/env bash
 
 #   Copyright 2014 Steve Francia
 #
@@ -14,10 +14,18 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
+#fork from :
+#	'spf13-vim'
+#	https://github.com/spf13/spf13-vim
+#to:
+#	https://github.com/XuesongYang/kidss_vimrc
+#
+#modify 20160917
+
 ############################  SETUP PARAMETERS
-app_name='spf13-vim'
-[ -z "$APP_PATH" ] && APP_PATH="$HOME/.spf13-vim-3"
-[ -z "$REPO_URI" ] && REPO_URI='https://github.com/spf13/spf13-vim.git'
+app_name='kidss_vimrc'
+[ -z "$APP_PATH" ] && APP_PATH="$HOME/.kidss_vimrc"
+[ -z "$REPO_URI" ] && REPO_URI='https://github.com/XuesongYang/kidss_vimrc.git'
 [ -z "$REPO_BRANCH" ] && REPO_BRANCH='3.0'
 debug_mode='0'
 fork_maintainer='0'
@@ -102,6 +110,10 @@ sync_repo() {
     local repo_name="$4"
 
     msg "Trying to update $repo_name"
+    msg "		  $repo_uri"
+    msg "		  $repo_branch"
+    msg "		  $repo_name"
+    msg "git clone -b $repo_branch $repo_uri $repo_path"
 
     if [ ! -e "$repo_path" ]; then
         mkdir -p "$repo_path"
